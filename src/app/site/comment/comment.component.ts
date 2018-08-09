@@ -25,6 +25,7 @@ export class CommentComponent implements OnInit {
       title: ['', [Validators.required, Validators.minLength(3)]],
       text: ['', [Validators.required]]
     });
+
     this.remarkService.get()
       .subscribe(data => {
         this.listOf = data;

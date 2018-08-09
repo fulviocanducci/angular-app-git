@@ -23,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let list of listOf;trackBy: index;">
+    <tr *ngFor="let list of listOf | orderBy:'title';trackBy: index;">
       <td>{{list.title}}</td>
     </tr>
   </tbody>

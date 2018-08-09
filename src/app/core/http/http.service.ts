@@ -10,6 +10,7 @@ import { environment } from './../../../environments/environment';
 export class HttpService {
 
   header: HttpHeaders;
+  headers;
 
   constructor(private httpClient: HttpClient) {
     this.header = new HttpHeaders()
@@ -24,4 +25,15 @@ export class HttpService {
     return this.httpClient.post<T>(`${environment.url_api}${url}`, model, {headers: this.header});
   }
 
+  find<T>(url: string, id: number): Observable<T> {
+    return this.httpClient.get<T>(`${environment.url_api}${url}/${id}`, {headers: this.header});
+  }
+
+  put<T>(url: string, model: T, id: number): Observable<T> {
+    return this.httpClient.put<T>(`${environment.url_api}${url}/${id}`, model, {headers: this.header});
+  }
+
+  delete<T>(url: string, id: number): Observable<T> {
+    return this.httpClient.delete<T>(`${environment.url_api}${url}/${id}`, {headers: this.header});
+  }
 }

@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NofoundComponent } from './nofound/nofound.component';
 import { CommentComponent } from './comment/comment.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { OrderPipe } from './../core/pipe/order.pipe';
 
 @NgModule({
   imports: [
@@ -16,6 +16,11 @@ import { SharedModule } from '../shared/shared.module';
     HttpClientModule,
     SharedModule
   ],
-  declarations: [HomeComponent, NofoundComponent, CommentComponent]
+  declarations: [
+    HomeComponent,
+    NofoundComponent,
+    CommentComponent,
+    OrderPipe
+  ]
 })
 export class SiteModule { }
